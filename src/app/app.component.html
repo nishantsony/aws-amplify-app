@@ -49,6 +49,9 @@
             {{ i + 1 }}. Id: {{ item.id }}, Name: {{ item.name }}
           </li>
         </ul>
+        <div class="card" *ngIf="data.length == 0">
+          No data available...
+        </div>
       </div>
     </div>
   </div>
