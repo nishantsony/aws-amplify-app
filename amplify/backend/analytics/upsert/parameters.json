@@ -1,0 +1,20 @@
+{
+    "appName": "upsert",
+    "roleName": "pinpointLambdaRolee0dd5a8e",
+    "cloudWatchPolicyName": "cloudWatchPolicye0dd5a8e",
+    "pinpointPolicyName": "pinpointPolicye0dd5a8e",
+    "authPolicyName": "pinpoint_amplify_e0dd5a8e",
+    "unauthPolicyName": "pinpoint_amplify_e0dd5a8e",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

@@ -1,0 +1,55 @@
+<!-- <h1 style="text-align: center">Amplify Demo</h1>
+<amplify-authenticator style="width:100%"></amplify-authenticator>
+<div *ngIf="signedIn" style="text-align: center">
+  <h2>Items</h2>
+  <input type="text" [(ngModel)]="id" id="id" placeholder="input id" />
+  <input type="text" [(ngModel)]="name" id="name" placeholder="input name" />
+  <button (click)="create()" id="create">Create/Update</button>
+  <div *ngIf="data.length > 0" style="margin-top: 10px; text-align: center">
+    <span *ngFor="let item of data; index as i">
+      {{ i + 1 }}. {{ item.id }} => {{ item.name }} <br />
+    </span>
+  </div>
+  <div *ngIf="data.length == 0">
+    No data available
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="jumbotron" style="text-align: center !important">
+    <h2>Amplify Demo</h2>
+    <amplify-authenticator></amplify-authenticator>
+  </div>
+
+  <div class="panel panel-primary" *ngIf="signedIn">
+    <div class="panel-heading">
+      Item Catalogue
+      <span style="margin-left: 60px">
+        <input type="text" [(ngModel)]="id" id="id" placeholder="input id" />
+        <input
+          type="text"
+          [(ngModel)]="name"
+          id="name"
+          placeholder="input name"
+        />
+        <button
+          type="button"
+          class="btn btn-warning"
+          (click)="create()"
+          id="create"
+        >
+          Create/Update
+        </button>
+      </span>
+    </div>
+    <div class="panel-body">
+      <div class="card" style="width: 100%;">
+        <ul class="list-group list-group-flush" *ngIf="data.length > 0">
+          <li *ngFor="let item of data; index as i" class="list-group-item">
+            {{ i + 1 }}. Id: {{ item.id }}, Name: {{ item.name }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

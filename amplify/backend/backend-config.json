@@ -1,0 +1,54 @@
+{
+	"storage": {
+		"dynamoe28012f0": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"function": {
+		"awsamplifyappe6a92f9b": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "dynamoe28012f0",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		}
+	},
+	"api": {
+		"api0d5db60e": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "awsamplifyappe6a92f9b",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		}
+	},
+	"auth": {
+		"cognitoc976fd3b": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"analytics": {
+		"upsert": {
+			"service": "Pinpoint",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"hosting": {}
+}
